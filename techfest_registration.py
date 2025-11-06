@@ -37,8 +37,8 @@ else:
     print("\nTracks offered in this event: " + ",".join(unique_tracks))
 
 #Task 4: Duplicate Name Detection
-names_seen = set[]
-duplicates = []
+names_seen = set()
+duplicates = set()
 
 for p in participants:
     if p["name"] in names_seen:
