@@ -41,13 +41,28 @@ names_seen = set()
 duplicates = set()
 
 for p in participants:
-    if p["name"] in names_seen:
+    name = p["name"]
+    if name in names_seen:
         duplicates.add(name)
     else:
         names_seen.add(name)
 
-    if len(duplicates) > 0:
+if len(duplicates) > 0:
         for name in duplicates:
             print("\nDuplicate name found:", name)
-        else:
-            print("\nNo duplicaten names.")
+else:
+    print("\nNo duplicate names.")
+
+#Task 5: Track Summary Report
+track_summary = {}
+
+for p in participants:
+    track = p["track"]
+    if track in track_summary:
+        track_summary[track] += 1
+    else:
+        track_summary[track] = 1
+
+print("\nParticipants per track: ")
+for track in track_summary:
+    print(f"{track}: {track_summary[track]}")
