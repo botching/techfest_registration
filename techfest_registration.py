@@ -35,3 +35,19 @@ if len(unique_tracks) < 2:
     print("\nNot enough variety in tracks.")
 else:
     print("\nTracks offered in this event: " + ",".join(unique_tracks))
+
+#Task 4: Duplicate Name Detection
+names_seen = set[]
+duplicates = []
+
+for p in participants:
+    if p["name"] in names_seen:
+        duplicates.add(name)
+    else:
+        names_seen.add(name)
+
+    if len(duplicates) > 0:
+        for name in duplicates:
+            print("\nDuplicate name found:", name)
+        else:
+            print("\nNo duplicaten names.")
